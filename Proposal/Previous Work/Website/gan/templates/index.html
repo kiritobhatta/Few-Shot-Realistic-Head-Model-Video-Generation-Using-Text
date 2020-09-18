@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('a#test').bind('click', function() {
+            $.getJSON('/background_process_test', {
+              textVal: document.getElementById("ab").value,
+              image: document.getElementById("imagePreview").querySelector(".image-preview__image").getAttribute("src")
+              // image: base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', document.getElementById("imagePreview").querySelector(".image-preview__image").getAttribute("src")))
+            },
+                function(data) {
+              //do nothing
+              window.location.href = '/show_video';
+            });
+        return false;
+      });
+      // window.location.href = '/show_video';
+    });
+</script>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src = "https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>FYP Project Home</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static' , filename='style.css' )}}"
+    />
+  </head>
+  <body>
+    <div class="banner-text">
+      <ul>
+        <li>Home</li>
+      </ul>
+      <h2>Welcome To Our Website</h2>
+      <!-- <div id="textbox-area"> -->
+      <!-- <form name="passdata" action="/" method="post"> -->
+      <form>
+        <div class="temp">
+          <textarea
+            placeholder="Please type here..."
+            rows="20"
+            cols="40"
+            name="text-values"
+            id="ab"
+          ></textarea>
+          <br><br/>
+        </div>
+        
+        <input type="file" name="inpFile" id="inpFile">
+        <div class="imagePreview" id="imagePreview">
+          <img src="" alt="Image Preview" class="image-preview__image">
+          <span class="image-preview__default-text">Image Preview</span>
+        </div>
+      
+        <script>
+          const inpFile1 = document.getElementById("inpFile");
+          const previewContainer = document.getElementById("imagePreview");
+          const previewImage = previewContainer.querySelector(".image-preview__image");
+          const previewDefaultText = previewContainer.querySelector(".image-preview__default-text");
+          inpFile1.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+              const reader = new FileReader;
+              previewDefaultText.style.display = "none";
+              previewImage.style.display = "block";
+              
+              reader.addEventListener("load", function(){
+                console.log(this);
+                previewImage.setAttribute("src", this.result);
+              });
+              reader.readAsDataURL(file);
+            } else {
+              previewDefaultText.style.display = null;
+              previewImage.style.display = null;
+              previewImage.setAttribute("src", "");
+            }
+          });
+        </script>
+        <div class="button-div">
+          <a href=# id=test><button class="btn" value="submit">Submit</button></a>
+        </div>
+      </form>
+      <!-- </div> -->
+      <!-- <input type="text" placeholder="Your text.." /> -->
+    </div>
+    <div class="animation-area"></div>
+    <ul class="box-area">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>

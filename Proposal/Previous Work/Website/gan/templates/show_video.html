@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>COMP4471 Project Video</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static' , filename='style_video.css' )}}"
+    />
+  </head>
+  <body>
+    <div class="banner-text">
+      <h2>Thank you for waiting :)</h2>
+      <video controls="true" width="288" height="360" >
+        <source src={{ url_for('static', filename="generated.mp4") }}
+        type="video/mp4"></source>
+        Video tag is not supported in this browser.
+      </video>
+    </div>
+    <div class="animation-area"></div>
+    <ul class="box-area">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>

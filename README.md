@@ -10,5 +10,5 @@ All of our work is based on open sourced github projects. We have implemented al
 The results produced by the code provided in this repository can be found in this [google drive](https://drive.google.com/drive/folders/1sCKzGWNhHi_8bIEsLsR5nKnr62XD0qkI?usp=sharing).
 
 ## Contribution
-This repository is for the Final year project for the *Hong Kong University of Science and Technology(HKUST)* on the topic of ***Few-Shot Realistic Head Model Video Generation Using Text*** by *BHATT, Umakant Datt, SHRESTHA Aayush and SUNG Ka Hong* under the supervision of *Prof. Desmond Yau-chat Tsoi*.
+This repository is for the Final year project for the *Hong Kong University of Science and Technology(HKUST)* on the topic of ***Few-Shot Realistic Head Model Video Generation Using Text*** by *BHATT Umakant Datt, SHRESTHA Aayush and SUNG Ka Hong* under the supervision of *Prof. Desmond Yau-chat Tsoi*.
 
